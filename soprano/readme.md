@@ -1,7 +1,7 @@
 # Soprano
 Rasberry Pi + BME280 Digital Humidity, Pressure, and Temperature sensor
 
-![soprano](../images/soprano.jpg | width=100)
+<img src="../images/soprano.jpg" width="400" />
 
 This sensor will monitor a room's humidity, pressure, and temperature every second. It will send data to ChoralAllegro for processing. The json format is as follows:
 ```
