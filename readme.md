@@ -1,5 +1,5 @@
-# Cappella
-Cappella is Choral's test Choral which is composed of the following devices:
+# Acappella
+Acappella is Choral's test Choral which is composed of the following devices:
   - **Soprano**: Rasberry Pi + BME280 Digital Humidity, Pressure, and Temperature sensor
 
   License
