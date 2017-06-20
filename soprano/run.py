@@ -12,6 +12,7 @@ import requests
 # device data
 device_id = "e8d5413873148e5fce79687c42429391bc14d113"
 user_secret = "secret"
+url = "http://192.168.0.14:3000/"
 
 # Get I2C bus
 bus = smbus.SMBus(1)
@@ -143,18 +144,18 @@ def sense():
     return cTemp, fTemp, pressure, humidity
 
 def emit(temperature, pressure, humidity):
-    data = json.dumps({
+    payload = {
         "device_id":device_id, \
         "user_secret":user_secret, \
-        "data": { \
+        "device_data": { \
             "humidity":humidity, \
             "pressure":pressure, \
             "temperature":temperature, \
         }, \
-        "timestamp":int(round(time.time() * 1000)) \
-    })
-    
-    r = requests.post('http://localhost:3000', json=data)
+        "device_timestamp":int(round(time.time() * 1000)) \
+    }
+    print payload    
+    r = requests.post(url, json=payload)
     print r.status_code
 
 # Output data to screen
