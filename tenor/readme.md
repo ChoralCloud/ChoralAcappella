@@ -1,17 +1,15 @@
-# Soprano
-Rasberry Pi + BME280 Digital Humidity, Pressure, and Temperature sensor
+# Tenor
+Raspberry Pi + TSL45315 Light Sensor
 
-<img src="../images/soprano.jpg" width="400" />
+<img src="../images/tenor.jpg" width="400" />
 
-This sensor will monitor a room's humidity, pressure, and temperature every second. It will send data to ChoralAllegro for processing. The json format is as follows:
+This sensor will monitor a room's luminance every second. It will send data to ChoralAllegro for processing. The json format is as follows:
 ```
 {
-    "device_id":"e8d5413873148e5fce79687c42429391bc14d113", //sha-1 hash of "temperature sensor"
+    "device_id":"8ba5f37f7745f8e450b9a9f42534eb983099854a", //sha-1 hash of "light sensor"
     "user_secret":"secret",
     "data": {
-        "humidity":"h1",
-        "pressure":"p1",
-        "temperature":"t1",
+        "luminance":"l1"
     },
     "timestamp":123456789
 }
@@ -30,7 +28,7 @@ sudo raspi-config
     enable i2c
 ```
 4. We will use Python and [smbus-cffi] to communicate between Rasberry Pi and sensor, so install dependencies
-5. Download python file and place into `/home/pi/soprano/`
+5. Download python file and place into `/home/pi/tenor/`
 6. Run python file
 
 [smbus-cffi]: https://pypi.python.org/pypi/smbus-cffi/0.5.1
