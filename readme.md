@@ -5,6 +5,8 @@ Acappella is Choral's test Choral which is composed of the following devices:
   - **Soprano**: Rasberry Pi + BME280 Digital Humidity, Pressure, and Temperature sensor
   - **Tenor**: Raspberry Pi + MQ135 Air Quality Sensor
 
+<img src="images/architecture.png" />
+
 License
 ----
 Copyright (c) 2017 Choral
