@@ -1,9 +1,9 @@
 # Acappella
 Acappella is Choral's test Choral which is composed of the following devices:
   - **Alto**: Particle Photon + ADC121C021_PIZO Vibration Sensor
-  - **Baritone**: Particle Photon + MQ135 Air Quality Sensor
+  - **Baritone**: Particle Photon + TSL45315 Light Sensor 
   - **Soprano**: Rasberry Pi + BME280 Digital Humidity, Pressure, and Temperature sensor
-  - **Tenor**: Raspberry Pi + TSL45315 Light Sensor
+  - **Tenor**: Raspberry Pi + MQ135 Air Quality Sensor
 
 License
 ----

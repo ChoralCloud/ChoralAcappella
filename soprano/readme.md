@@ -8,12 +8,12 @@ This sensor will monitor a room's humidity, pressure, and temperature every seco
 {
     "device_id":"e8d5413873148e5fce79687c42429391bc14d113", //sha-1 hash of "temperature sensor"
     "user_secret":"secret",
-    "data": {
+    "device_data": {
         "humidity":"h1",
         "pressure":"p1",
         "temperature":"t1",
     },
-    "timestamp":123456789
+    "device_timestamp":123456789
 }
 ```
 

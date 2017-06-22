@@ -1,22 +1,24 @@
 # Baritone
-Particle Photon + MQ135 Air Quality Sensor
+Particle Photon + TSL45315 Light Sensor
 
 <img src="../images/baritone.jpg" width="400" />
 
-This sensor will monitor a room's air quality every second. It will send data to ChoralAllegro for processing. The json format is as follows:
+This sensor will monitor a room's luminance every second. It will send data to ChoralAllegro for processing. The json format is as follows:
 ```
 {
-    "device_id":"abef6fe4679519e33a0ee540de1c765ec0cb894f", //sha-1 hash of "air quality sensor"
+    "device_id":"8ba5f37f7745f8e450b9a9f42534eb983099854a", //sha-1 hash of "light sensor"
     "user_secret":"secret",
-    "data": {
-        "ammonia":"am1",
-        "alcohol":"al1",
-        "nox":"n1",
-        "benzene":"b1",
-        "co2":"c1"
+    "device_data": {
+        "luminance":"l1"
     },
-    "timestamp":123456789
+    "device_timestamp":123456789
 }
 ```
 
 ### Setup
+1. Connect Particle Photon to wifi using [this setup guide]
+2. Create a Particle account and go to the [Web IDE]
+3. Load baritone.ino
+
+[this setup guide]: <https://docs.particle.io/guide/getting-started/start/photon/#step-1-power-on-your-device>
+[Web IDE]: <https://build.particle.io>
