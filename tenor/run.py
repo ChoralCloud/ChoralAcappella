@@ -133,8 +133,8 @@ def emit(co2, amm):
         "device_id":device_id, \
         "user_secret":user_secret, \
         "device_data": { \
-            "carbon_dioxide":co2, \
-            "ammonia":amm
+            "carbon_dioxide":co2['co2'], \
+            "ammonia":amm['nh3'] \
         }, \
         "device_timestamp":int(round(time.time() * 1000)) \
     }

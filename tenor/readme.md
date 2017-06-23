@@ -9,11 +9,8 @@ This sensor will monitor a room's air quality every second. It will send data to
     "device_id":"abef6fe4679519e33a0ee540de1c765ec0cb894f", //sha-1 hash of "air quality sensor"
     "user_secret":"secret",
     "device_data": {
-        "ammonia":"am1",
-        "alcohol":"al1",
-        "nox":"n1",
-        "benzene":"b1",
-        "co2":"c1"
+        "carbon_dioxide":"c1",
+        "ammonia":"a1",
     },
     "device_timestamp":123456789
 }
