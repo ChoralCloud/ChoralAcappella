@@ -109,24 +109,23 @@ class ADC121C_MQ135():
         return {'co2' : ppm}
 
     def calculate_ppm_NH3(self):
-    """Calculate the final concentration value"""
+        """Calculate the final concentration value"""
         a = -0.41
         b = 1.0
         ppm = math.exp(((math.log(self.ratio, 10)) - b) / a)
                 
         return {'nh3' : ppm}
 
-from ADC121C_MQ135 import ADC121C_MQ135
 ADC121C_mq135 = ADC121C_MQ135()
 
 def sense():
-    adc121c_mq135.data_config()
-    adc121c_mq135.measure_rsAir()
-    adc121c_mq135.measure_Rs()
-    adc121c_mq135.measure_Ro()
-    adc121c_mq135.measure_ratio()
-    co2 = adc121c_mq135.calculate_ppm_CO2()
-    amm = adc121c_mq135.calculate_ppm_NH3()
+    ADC121C_mq135.data_config()
+    ADC121C_mq135.measure_rsAir()
+    ADC121C_mq135.measure_Rs()
+    ADC121C_mq135.measure_Ro()
+    ADC121C_mq135.measure_ratio()
+    co2 = ADC121C_mq135.calculate_ppm_CO2()
+    amm = ADC121C_mq135.calculate_ppm_NH3()
     return co2, amm
     
 def emit(co2, amm):
