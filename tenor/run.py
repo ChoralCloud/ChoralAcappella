@@ -9,11 +9,12 @@ import time
 import math
 import json
 import requests
+import os
 
 # device data
 device_id = "8ba5f37f7745f8e450b9a9f42534eb983099854a"
 user_secret = "secret"
-url = "http://192.168.0.14:3000/"
+url = "http://choralcluster.csc.uvic.ca:8081/"
 
 # Distributed with a free-will license.
 # Use it any way you want, profit or free, provided it fits in the licenses of its associated works.
@@ -143,10 +144,15 @@ def emit(co2, amm):
     print r.status_code
 
 # Output data to screen
+log = open("log.txt", "w")
 while (True):
-    co2, amm = sense()
-    emit(co2, amm)
-    print "Carbon Dioxide Concentration : %.3f ppm" %(co2['co2'])
-    print "Ammonia Concentration : %.3f ppm" %(amm['nh3'])
-    print " ********************************* "
-    time.sleep(1.0)
+    try:
+        co2, amm = sense()
+        emit(co2, amm)
+        print "Carbon Dioxide Concentration : %.3f ppm" %(co2['co2'])
+        print "Ammonia Concentration : %.3f ppm" %(amm['nh3'])
+        print " ********************************* "
+        time.sleep(1.0)
+    except:
+        log.write("Error: Could not post data\n")
+
