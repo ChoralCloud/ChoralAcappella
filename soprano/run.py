@@ -8,11 +8,14 @@ import smbus
 import time
 import json
 import requests
+import os
 
 # device data
 device_id = "e8d5413873148e5fce79687c42429391bc14d113"
 user_secret = "secret"
-url = "http://192.168.0.14:3000/"
+url = "http://choralcluster.csc.uvic.ca:8081"
+
+log = open("log.txt", "w")
 
 # Get I2C bus
 bus = smbus.SMBus(1)
@@ -144,19 +147,22 @@ def sense():
     return cTemp, fTemp, pressure, humidity
 
 def emit(temperature, pressure, humidity):
-    payload = {
-        "device_id":device_id, \
-        "user_secret":user_secret, \
-        "device_data": { \
-            "humidity":humidity, \
-            "pressure":pressure, \
-            "temperature":temperature, \
-        }, \
-        "device_timestamp":int(round(time.time() * 1000)) \
-    }
-    print payload    
-    r = requests.post(url, json=payload)
-    print r.status_code
+    try:
+        payload = {
+            "device_id":device_id, \
+            "user_secret":user_secret, \
+            "device_data": { \
+                "humidity":humidity, \
+                "pressure":pressure, \
+                "temperature":temperature, \
+            }, \
+            "device_timestamp":int(round(time.time() * 1000)) \
+        }
+        print payload    
+        r = requests.post(url, json=payload)
+        print r.status_code
+    except:
+        log.write("Error: Could not post data\n")
 
 # Output data to screen
 while (True):
@@ -167,3 +173,4 @@ while (True):
     print "Pressure : %.2f hPa " %pressure
     print "Relative Humidity : %.2f %%" %humidity
     time.sleep(1.0)
+    

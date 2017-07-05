@@ -13,7 +13,7 @@ import requests
 # device data
 device_id = "8ba5f37f7745f8e450b9a9f42534eb983099854a"
 user_secret = "secret"
-url = "http://192.168.0.14:3000/"
+url = "http://choralcluster.csc.uvic.ca:8081/"
 
 # Distributed with a free-will license.
 # Use it any way you want, profit or free, provided it fits in the licenses of its associated works.
