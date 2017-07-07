@@ -146,14 +146,6 @@ def emit(co2, amm):
 # Output data to screen
 log = open("log.txt", "w")
 while (True):
-<<<<<<< HEAD
-    co2, amm = sense()
-    emit(co2, amm)
-    print "Carbon Dioxide Concentration : %.3f ppm" %(co2['co2'])
-    print "Ammonia Concentration : %.3f ppm" %(amm['nh3'])
-    print " ********************************* "
-    time.sleep(1.0)
-=======
     try:
         co2, amm = sense()
         emit(co2, amm)
@@ -163,5 +155,3 @@ while (True):
         time.sleep(1.0)
     except:
         log.write("Error: Could not post data\n")
-
->>>>>>> 2dfe15b5b9950bcd460fc66318c090fe40e4bb1a
